@@ -11,7 +11,7 @@
  */
 
 
-node('PERF_TEST') {
+node('NADE_PERF') {
   def lib = library("jenkins-library").org.zowe.jenkins_shared_library
 
   def pipeline = lib.pipelines.nodejs.NodeJSPipeline.new(this)
