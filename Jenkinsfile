@@ -11,12 +11,12 @@
  */
 
 
-node('zowe-jenkins-agent-dind') {
+node('PERF_TEST') {
   def lib = library("jenkins-library").org.zowe.jenkins_shared_library
 
   def pipeline = lib.pipelines.nodejs.NodeJSPipeline.new(this)
 
-  pipeline.admins.add("jackjia", "jcain")
+  pipeline.admins.add("asaraf", "amit")
 
   // build parameters for FVT test
   pipeline.addBuildParameters(
@@ -44,7 +44,7 @@ node('zowe-jenkins-agent-dind') {
     string(
       name: 'FVT_ZOSMF_PORT',
       description: 'z/OSMF port for integration test',
-      defaultValue: '10443',
+      defaultValue: '11443',
       trim: true,
       required: true
     ),
